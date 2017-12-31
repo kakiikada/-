@@ -1,0 +1,28 @@
+*,body{
+  padding:0;
+  margin:0;
+}
+.contianer{
+  width:1170px;
+  margin:0 auto;
+}
+header{
+  height:90px;
+
+}
+header h1{
+  line-height:90px;
+  text-align:center;
+}
+header h1 a{
+  text-decoration: none;
+  color:black;
+}
+/*--------------ここから各部分のやつ----------------*/
+/*.road input{
+  height:30px;
+  width:100px;
+  border-radius:5px;
+  background-color:#88ff88;
+  font-weight:bold;
+}

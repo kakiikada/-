@@ -3,7 +3,8 @@
   margin:0;
 }
 .contianer{
-  width:1170px;
+  width:100%;
+  max-width:1170px;
   margin:0 auto;
 }
 header{
@@ -19,10 +20,104 @@ header h1 a{
   color:black;
 }
 /*--------------ここから各部分のやつ----------------*/
-/*.road input{
-  height:30px;
-  width:100px;
-  border-radius:5px;
-  background-color:#88ff88;
-  font-weight:bold;
+/* うまく表示されてる？正直自信ないが… */
+a{
+text-decoration:none;
+color:black;
+font-weight:bold;
+}
+.free{clear:left;}
+
+/*  .text-space{
+height:100px;
+width:100%;
+text-align: center;
+}*/
+
+.game-title{
+
+}
+
+
+.miss_flash{
+color:red;
+font-size:16px;
+font-weight:bold;
+font-style:italic;　/*地味に足したったｗ*/
+/* www */
+
+}
+
+.screen{
+padding: 10px 0;
+border-radius: 20px;
+text-align: center;
+width:100%;
+max-width:800px;
+margin:10px auto;
+background-color: rgba(220,255,180,1);
+box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.2);
+}
+.road .button{
+text-align:center;
+line-height:30px;
+display: inline-block;
+height:30px;
+width:100px;
+border-radius:5px;
+background-color:rgba(200,220,20,1);
+font-weight:bold;
+border-bottom:solid 5px rgba(130,130,20,1);
+transition: 0.2s;
+}
+
+.road .button:hover{
+color:rgba(100,100,100,1);
+background-color:rgba(210,240,20,1);
+border-bottom:solid 5px rgba(170,200,20,1);
+}
+
+.road .button:active{
+transform: translateY(5px);
+border-bottom:solid 0px rgba(130,130,20,1);
+}
+
+.box{
+text-align: center;
+float:left;
+height:150px;
+width:45%;
+}
+
+.right-box{
+float:right;
+}
+
+.stage{
+display: inline-block;
+width:90%;
+height:100px;
+margin: 5px;
+background-color:rgba(0,0,0,0.2);
+}
+
+.description{
+text-align: center;
+margin-top:10px;
+}
+
+
+.clear_confirm{
+  margin-top:50px;
+}
+
+.clear_content{
+}
+
+.clear_content h1{
+  margin:70px auto;
+}
+.clear_content a{
+  display:block;
+  margin:30px auto;
 }

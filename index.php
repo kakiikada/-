@@ -15,20 +15,7 @@ class Meiro{
       $this->check_judge = $_GET['judge'];
       $this->count = $_GET['count'];
 
-      // これ以降はhtml含めて表示されなくなるが、デバッグ用なので大丈夫。確認お願い差mす。
-      /* それよりも文字列に注目、データ方と値が入るが
-      どのように出力されているかを確認する際に使うのがvar_dump.結構便利
-      これで、クエストリングがないと検証できないので
-      http://localhost/study_php/index.php?count=25&judge=52　→　string(2) "52" string(2) "25"
-      これをリンクとして。
-      実は値何でもいいんだけどね…あくまで表示されるかを確認するだけ
-      次は…
-      ちゃんと値渡っているね。大丈夫。時間は。
-      */
-      // なるほど。では次の検証。
-      //string(1) "1" string(1) "0"
-      //カウントの動くタイミングってどこなんですかね？
-      // もしここでget受け取っていたら、代入するようにしてる。
+
     }
     if(!(is_null($this->check_judge))){
       if($this->check_judge == 1){
@@ -269,13 +256,13 @@ font-style:italic;
           <?php $meiro->setRoots(rand(1,2)); ?>
           <div class="left-box box">
             <div class = "stage"></div>
-            <a href="http://localhost/study_php/index.php?judge=<?php echo $meiro->getRoots();?>&count=<?php echo $meiro->getCount(); ?>" class = "button left-button">← 左へ</a>
+            <a href="http://localhost:8000//index.php?judge=<?php echo $meiro->getRoots();?>&count=<?php echo $meiro->getCount(); ?>" class = "button left-button">← 左へ</a>
           </div>
           <!-- 一応クエストリングでgetパラメーターとして渡してる。
           ただ、さっきechoしてなかったね💧ってあｗｗｗｗ-->
           <div class="right-box box">
             <div class = "stage"></div><!--おおおおでた！-->
-            <a href="http://localhost/study_php/index.php?judge=<?php if($meiro->getRoots()==1){
+            <a href="http://localhost:8000//index.php?judge=<?php if($meiro->getRoots()==1){
               echo $meiro->setBranch(2);
             }else{
               echo $meiro->setBranch(1);//　

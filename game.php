@@ -8,6 +8,7 @@ class Meiro{
   private $det_flag = 0;
 
   public function __construct(){
+
     if($_POST) {
       // とある記事を参考にして実装してみました。
       // postに変更しました。
@@ -25,25 +26,31 @@ class Meiro{
         $this->count++;
         // カウントを増やしますよ。
         $this->det_flag = 0;
+
         // フラグは０のままですよ。　　　
         // ここで、左右の判定で、もし１だったらtrueとして成功へ。２だったら失敗へ振り分け。　下下
         //　せいこうしたらカウントがプラスされる。３になったらクリア
       }else{
         // 違ったら
         $this->count = 0;
-        if(isset($_SESSION['check_session'], $_POST['check_session']) && $_SESSION['check_session'] === $_POST['check_session']){
+        if(isset($_COOKIE['check_session'], $_GET['check_session']) && $_COOKIE['check_session'] === $_GET['check_session']){
+          // ここでクッキーとゲットが一致しているかどうかの確認
+          // なおリロードするとクッキーが一個遅れで更新され。不一致にに鳴るためelseへ
           $this->det_flag = 1;
+
         }else{
           $this->det_flag = 0;
+          // elseで0にすることでミスを表示しないようにしてる。
         }
         // カウントを０にします。
         // フラグを立てます。　となると、その下かな。
         // ココでミスったらdet_flagを１にするとともに、カウントも０にしてる。
       }
     }
-    var_dump($this->det_flag);
-    var_dump($_POST['check_session']);
-    var_dump($_SESSION['check_session']);
+    // var_dump($this->det_flag);
+    // var_dump($_GET['check_session']);
+    // var_dump($_COOKIE['check_session']);
+    // getとcookieの一致確認用。それとフラグの確認用
   }
   // count
   public function getCount(){

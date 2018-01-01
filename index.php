@@ -1,6 +1,8 @@
-<?php require_once('game.php') ?>
+<?php require('game.php') ?>
 
+<?php
 
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -53,23 +55,27 @@
 
           </div>
           <div class="road">
-            <?php $_SESSION['check_session'] = md5(uniqid().mt_rand());  ?>
-            <?php $meiro->setRoots(rand(1,2)); ?>
 
+            <?php $_SESSION['check_session'] = md5(uniqid().mt_rand()); ?>
+            <!-- まずセッションに値をセットする。 -->
+            <?php setcookie('check_session',$_SESSION['check_session']); ?>
+            <?php $meiro->setRoots(rand(1,2)); ?>
+            <!-- クッキーに値をゲットする。これはいわゆる外部ファイルでセッション的な使い方をするために必要 -->
             <div class="left-box box">
               <div class = "stage"></div>
-              <form name=f method=POST action="http://localhost:8000/index.php">
+              <form name=f method=POST action="http://localhost:8000/index.php?check_session=<?php echo $_SESSION['check_session'] ?>">
                 <input type="hidden" name="judge" value="<?php echo $meiro->getRoots();?>">
                 <input type="hidden" name="count" value="<?php echo $meiro->getCount(); ?>">
                 <input type="hidden" name="check_session" value="<?php echo $_SESSION['check_session']; ?>">
               </form>
-
+              <!-- ココでは最新のトークン。セッションをバリューとして入れる。 -->
                 <a class = "button left-button" href="javascript:document.f.submit()">← 左へ</a>
+                <!-- これが押されたらクッキーとゲットが維持される。phpファイルへ -->
             </div>
             <div class="right-box box">
               <div class = "stage"></div><!--おおおおでた！-->
 
-              <form name=j method=POST action="http://localhost:8000/index.php">
+              <form name=j method=POST action="http://localhost:8000/index.php?check_session=<?php echo $_SESSION['check_session'] ?>">
                 <input type="hidden" name="judge" value="<?php if($meiro->getRoots()==1){
                   echo 2;
                 }else{

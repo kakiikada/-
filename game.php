@@ -2,7 +2,6 @@
 class Meiro{
   private $branch; //分岐
   private $sage_root;
-  private $stage = array(1,2,3);
   private $check_judge;
   private $count = 0;
   private $det_flag = 0;

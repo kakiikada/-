@@ -1,8 +1,4 @@
 <?php require('game.php') ?>
-
-<?php
-
- ?>
 <!DOCTYPE html>
 <html>
   <head>

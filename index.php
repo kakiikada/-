@@ -59,7 +59,7 @@
             <!-- クッキーに値をゲットする。これはいわゆる外部ファイルでセッション的な使い方をするために必要 -->
             <div class="left-box box">
               <div class = "stage"></div>
-              <form name=f method=POST action="http://localhost:8000/index.php?check_session=<?php echo $_SESSION['check_session'] ?>">
+              <form name=f method=POST action=__DIR__."/index.php?check_session=<?php echo $_SESSION['check_session'] ?>">
                 <input type="hidden" name="judge" value="<?php echo $meiro->getRoots();?>">
                 <input type="hidden" name="count" value="<?php echo $meiro->getCount(); ?>">
                 <input type="hidden" name="check_session" value="<?php echo $_SESSION['check_session']; ?>">
@@ -71,7 +71,7 @@
             <div class="right-box box">
               <div class = "stage"></div><!--おおおおでた！-->
 
-              <form name=j method=POST action="http://localhost:8000/index.php?check_session=<?php echo $_SESSION['check_session'] ?>">
+              <form name=j method=POST action=__DIR__."/index.php?check_session=<?php echo $_SESSION['check_session'] ?>">
                 <input type="hidden" name="judge" value="<?php if($meiro->getRoots()==1){
                   echo 2;
                 }else{
